@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@1&display=swap');
+
+.header{
+  background-image:url("../src/assets/suggestions/desktop/background-header.png");
+  background-repeat: no-repeat;
+  height:20rem;
+  background-size: cover;
+}
+.add-image{
+  background-image:url("../src/assets/suggestions/desktop/background-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
