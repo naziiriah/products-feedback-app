@@ -6,22 +6,27 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FaHamburger } from "react-icons/fa";
 import { GrClose } from "react-icons/gr"
+import Emptypage from "../emptyPage";
 
 
 
 const Homepage = () => {
 
-    const Navigate = useNavigate()
+    const Navigate = useNavigate(),
     
-    const user = JSON.parse(localStorage.getItem('user'))    
-    const [value, setValue] = useState('All')
-    const [modal, setModal] = useState(false)
+    user = JSON.parse(localStorage.getItem('user')),   
+    [value, setValue] = useState('All'),
+    [modal, setModal] = useState(false);
 
     return ( 
-        <Box 
+    user
+    ?    
+    <Box 
         display="flex" 
-        justifyContent={["normal","normal","","space-between"]} width={["98%","95%","90%", "90%"]}  margin="auto"
-        flexDirection={["column", "column", "column", "row"]} height={["20%", "20%","100%","100%"]}>
+        justifyContent={["normal","normal","","space-between"]} 
+        width={["98%","95%","90%", "90%"]}  margin="auto"
+        flexDirection={["column", "column", "column", "row"]} 
+        height={["20%", "20%","100%","100%"]}>
             
             <Box 
             width={["100%","100%","100%","27%"]} 
@@ -57,7 +62,7 @@ const Homepage = () => {
                         </Box>   
                     </Box>
                 </Box>
-                {user?  <Box 
+                 <Box 
                 as="section"
                 display={["none","none", "block","block"]}
                 width={["30%","30%","30%", "90%"]} 
@@ -87,9 +92,9 @@ const Homepage = () => {
                         <SuggestionButton setValue={setValue} name="feature"/>
                         
                     </Box>
-                </Box> : <></>}
+                </Box> : 
 
-                {user ? <Box 
+                <Box 
                 as="section"
                 width={["30%","30%","30%", "90%"]}  
                 display={["none","none", "block","block"]}
@@ -138,7 +143,7 @@ const Homepage = () => {
 
                     </Box>
                     
-                </Box> : <></>}
+                </Box> : 
                 
             </Box>    
             <Suggestions value={value}/>
@@ -232,6 +237,8 @@ const Homepage = () => {
 
             
         </Box>
+    : 
+    <Emptypage/>
      );
 }
  

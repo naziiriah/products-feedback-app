@@ -17,8 +17,7 @@ function App() {
   return (
     <BrowserRouter>
     <Box 
-      height="140rem" 
-      maxWidth="100rem"
+      height="90rem" 
       className="App" 
       width={["100%", "100%", "100%", "100%"]} 
       margin="auto"
